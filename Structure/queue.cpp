@@ -63,6 +63,46 @@ class Queue{
         }
 };
 
+const int N = 100010;
+class ArQueue{
+    private:
+        int arr[N];
+        int Size;
+        int st;
+        int ed;
+    
+    public :
+        ArQueue()
+        {
+            st = 0;
+            ed = -1;
+            Size = 0;
+        }
+        int size()
+        {
+            return Size;
+            // if(st > ed) 为空 cout << (st <= ed ? "NO" : "Yes")
+        }
+        bool isempty()
+        {
+            return Size == 0;
+        }
+        void push(int x)
+        {
+            arr[++ed] = x;
+            Size++;
+        }
+        int peek()
+        {
+            return arr[st];
+        }
+        void pop()
+        {
+            st++;
+            Size--;
+        }
+};
+
 
 int main()
 {
